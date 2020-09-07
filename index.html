@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./svg.min.js"></script>
+</head>
+<body>
+    <div id="svg_shape" style="border: 1px solid #000; width: fit-content;"></div>
+    <script src="./Shape_svg.js"></script>
+    <script>
+        // Instance Shape (element, baseWidthElement, width, height, scale, title)
+        const baseWidth = 100,
+            widthShape = 400,
+            heightShape = 500,
+            dataX = 35,
+            dataY = 200;
+        const shape = new window.Shape('#svg_shape', baseWidth, widthShape, heightShape, 1, "Figure 2: The Blueprint");
+        
+        const widthBox3 = Math.sqrt((baseWidth*5/4)**2 + baseWidth**2);
+        const ratioWidthBox3 = widthBox3/baseWidth;
+        const rotateBox3 =  Math.sin(baseWidth / widthBox3) * (180/Math.PI) + 5;
+        const dataShape = [
+            {
+                width: 1,
+                height: 1,
+                points: ['B', '', '', 'H'],
+                params: [9, 0, '', 72],
+                text: 'Youth\n(0-27)',
+                xX: dataX,
+                yY: dataY,
+                x: {
+                    color: 'blue',
+                    x1: true,
+                    x2: true,
+                    x3: true,
+                    x4: true
+                },
+                digit: {
+                    color: 'red',
+                    point: [1, 1, 1, 1]
+                },
+                transfrom: {}
+            },
+            {
+                width: 5/4,
+                height: 5/4,
+                points: ['C', 'F', 'E', 'D'],
+                params: [27, '', 45, 36],
+                text: 'Power\n(27-54)',
+                xX: dataX + baseWidth,
+                yY: dataY + baseWidth,
+                x: {
+                    color: 'blue',
+                    x1: true,
+                    x2: true,
+                    x3: true,
+                    x4: true
+                },
+                digit: {
+                    color: 'red',
+                    point: [1, 1, 1, 1]
+                },
+                transfrom: {}
+            },
+            {
+                width: ratioWidthBox3,
+                height: ratioWidthBox3,
+                points: ['I', 'G', '', 'A'],
+                params: [72, 63, 54, 81],
+                text: 'Wisdom\n(54-81)',
+                xX: dataX + baseWidth,
+                yY: dataY - ratioWidthBox3*baseWidth,
+                x: {
+                    color: 'blue',
+                    x1: true,
+                    x2: true,
+                    x3: true,
+                    x4: true
+                },
+                digit: {
+                    color: 'red',
+                    point: [1, 1, 1, 1]
+                },
+                transfrom: {
+                    rotate: rotateBox3,
+                    origin: 'bottom left',
+                    flip: 'left',
+                    translate: [-5, -15]
+                }
+            }
+        ];
+        shape.render({
+            dataShape,
+            x: dataX,
+            y: dataX
+        });
+    </script>
+</body>
+</html>
