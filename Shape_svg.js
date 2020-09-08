@@ -19,7 +19,7 @@ class Shape {
         const groupBox = draw.group();
         const box = draw.rect(props.w, props.h)
             .fill(props.fill || 'transparent')
-            .stroke({color: this.color,  width: 2})
+            .stroke({color: this.color,  width: 1.5})
             .move(props.x, props.y);
 
         // Draw points
