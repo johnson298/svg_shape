@@ -11,12 +11,12 @@
     <script src="./Shape_svg.js"></script>
     <script>
         // Instance Shape (element, baseWidthElement, width, height, scale, title)
-        const baseWidth = 100,
-            widthShape = 400,
-            heightShape = 500,
-            dataX = 35,
+        const baseWidth = 130,
+            widthShape = 500,
+            heightShape = 600,
+            dataX = 50,
             dataY = 200;
-        const shape = new window.Shape('#svg_shape', baseWidth, widthShape, heightShape, 1, "Figure 2: The Blueprint");
+        const shape = new window.Shape('#svg_shape', baseWidth, widthShape, heightShape, 1, "Họ tên: Nguyễn Văn XXX\nNgày sinh: xx/xx/xx");
         
         const widthBox3 = Math.sqrt((baseWidth*5/4)**2 + baseWidth**2);
         const ratioWidthBox3 = widthBox3/baseWidth;
@@ -26,8 +26,11 @@
                 width: 1,
                 height: 1,
                 points: ['B', '', '', 'H'],
-                params: [9, 0, '', 72],
-                text: 'Youth\n(0-27)',
+                params: [9, 1, 27, 18],
+                text: {
+                    tspan1: 'Tiên cảnh',
+                    tspan2: '(0-27)'
+                },
                 xX: dataX,
                 yY: dataY,
                 x: {
@@ -38,8 +41,9 @@
                     x4: true
                 },
                 digit: {
-                    color: 'red',
-                    point: [1, 1, 1, 1]
+                    color: '#000',
+                    point: ['u=21/3', 'c3', '6', 'u=3'],
+                    inside: 3
                 },
                 transfrom: {}
             },
@@ -47,8 +51,11 @@
                 width: 5/4,
                 height: 5/4,
                 points: ['C', 'F', 'E', 'D'],
-                params: [27, '', 45, 36],
-                text: 'Power\n(27-54)',
+                params: [27, 54, 45, 36],
+                text: {
+                    tspan1: 'Tiên cảnh',
+                    tspan2: '(0-27)'
+                },
                 xX: dataX + baseWidth,
                 yY: dataY + baseWidth,
                 x: {
@@ -59,8 +66,8 @@
                     x4: true
                 },
                 digit: {
-                    color: 'red',
-                    point: [1, 1, 1, 1]
+                    color: '#000',
+                    point: ['c=3', '24/6', 't=20/2', 'i=9']
                 },
                 transfrom: {}
             },
@@ -69,7 +76,10 @@
                 height: ratioWidthBox3,
                 points: ['I', 'G', '', 'A'],
                 params: [72, 63, 54, 81],
-                text: 'Wisdom\n(54-81)',
+                text: {
+                    tspan1: 'Sức mạnh',
+                    tspan2: '(0-27)'
+                },
                 xX: dataX + baseWidth,
                 yY: dataY - ratioWidthBox3*baseWidth,
                 x: {
@@ -80,21 +90,23 @@
                     x4: true
                 },
                 digit: {
-                    color: 'red',
-                    point: [1, 1, 1, 1]
+                    color: '#000',
+                    point: ['n=14/5', 'i=9', 't=20/2', '1985=27/5'],
+                    inside: 4
                 },
                 transfrom: {
                     rotate: rotateBox3,
                     origin: 'bottom left',
                     flip: 'left',
-                    translate: [-5, -15]
+                    translate: [5, -28]
                 }
             }
         ];
         shape.render({
             dataShape,
             x: dataX,
-            y: dataX
+            y: dataX,
+            triangleText: '56/11/12'
         });
     </script>
 </body>
