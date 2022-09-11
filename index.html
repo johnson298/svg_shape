@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./svg.min.js"></script>
+</head>
+<body>
+    <div id="svg_shape" style="width: fit-content; margin: auto;"></div>
+    <script src="./Pitago.js"></script>
+    <script>
+        const shape = new window.Pitago('#svg_shape', 3);
+        shape.drawPitago({
+            circle: [10, 2, 3, 4, 5, 6, 7, 8, 9],
+            bottom: [1, '02', 3, 4, 5]
+        });
+    </script>
+</body>
+</html>
